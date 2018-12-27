@@ -1,2 +1,2 @@
 # rock
-A web framework based on node
+JavaScript and node study notes
