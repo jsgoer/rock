@@ -1,2 +1,2 @@
 # rock
-JavaScript and node study notes
+language study notes
