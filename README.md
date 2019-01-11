@@ -1,2 +1,2 @@
 # rock
-language study notes
+node study notes
