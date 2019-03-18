@@ -31,7 +31,7 @@
         job: 'it',
         [Symbol.iterator]() {
             let index = 0
-            let arr = ['zzy', 18, 'it']
+            let arr = Object.values(obj)
             let len = arr.length
             return {
                 next() {
