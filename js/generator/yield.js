@@ -1,9 +1,9 @@
 function* show() {
-  console.log('a')
-  let a = yield;
-  console.log('b')
-  console.log(a)
-  return '1'
+    console.log('a')
+    let a = yield;
+    console.log('b')
+    console.log(a)
+    return '1'
 }
 
 let gen = show()
