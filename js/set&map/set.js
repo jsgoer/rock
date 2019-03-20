@@ -56,3 +56,12 @@ for (let [item, val] of s2.entries()) {
     console.log(item, val);
 }
 
+{
+    // 如有给set的一个对象，得先用变量保存起来，否则后面用has来查询这个对象是否存在时为false，因为对象的引用的原因
+    let s = new Set()
+    let o = {t: 1}
+    s.add(o)
+    console.log(s);
+    console.log(s.has(o));
+}
+
