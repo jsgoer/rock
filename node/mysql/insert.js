@@ -7,8 +7,9 @@ const connection = query.createConnection({
     database: 'test'
 })
 connection.connect()
-const sql = 'SELECT * FROM user'
-connection.query(sql, function (err, res) {
+const addSql = 'INSERT INTO user(id,name,age) VALUES(3,?,?)'
+const addSqlParams = ['zzy', 18]
+connection.query(addSql, addSqlParams, function (err, res) {
     if (err) {
         console.log(err)
         return
