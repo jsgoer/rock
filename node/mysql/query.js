@@ -7,8 +7,9 @@ const connection = query.createConnection({
     database: 'test'
 })
 connection.connect()
-const sql = 'SELECT * FROM user'
-connection.query(sql, function (err, res) {
+const sql = 'SELECT * FROM user WHERE id = ?'
+const sqlParams = [1]
+connection.query(sql, sqlParams, function (err, res) {
     if (err) {
         console.log(err)
         return

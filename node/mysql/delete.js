@@ -7,8 +7,8 @@ const connection = query.createConnection({
     database: 'test'
 })
 connection.connect()
-const delSql = 'DELETE FROM user WHERE id = 3'
-connection.query(delSql, function (err, res) {
+const sql = 'DELETE FROM user WHERE id = 6'
+connection.query(sql, function (err, res) {
     if (err) {
         console.log(err)
         return

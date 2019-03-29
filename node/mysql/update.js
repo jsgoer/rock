@@ -7,9 +7,9 @@ const connection = query.createConnection({
     database: 'test'
 })
 connection.connect()
-const modSql = 'UPDATE user SET name = ?, age = ? WHERE id = ?'
-const modSqlParams = ['kobe', 40, 2]
-connection.query(modSql, modSqlParams, function (err, res) {
+const sql = 'UPDATE user SET name = ?, age = ? WHERE id = ?'
+const sqlParams = ['zhangzhiyong', 29, 5]
+connection.query(sql, sqlParams, function (err, res) {
     if (err) {
         console.log(err)
         return
