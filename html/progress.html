@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>标签标示任务的进度（进程）。用于进度条显示</p>
+<progress value="30" max="100" id="p"></progress>
+</body>
+<script>
+    let val = 10
+    let p = document.getElementById("p")
+    let s = setInterval(() => {
+        val++
+        p.value = val
+        if (val == 100) {
+            clearInterval(s)
+        }
+    }, 100)
+</script>
+</html>
