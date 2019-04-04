@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="refresh">刷新</button>
+<div id="root"></div>
+</body>
+<script src="./virtualDOM.js"></script>
+<script>
+
+    // 正常的DOM树如下
+    let elem = Element({
+        tagName: 'ul',
+        props: {'class': 'list'},
+        children: [
+            Element({tagName: 'li', children: ['item1']}),
+            Element({tagName: 'li', children: ['item2']}),
+        ]
+    })
+
+    let newElem = Element({
+        tagName: 'ul',
+        props: {'class': 'list'},
+        children: [
+            Element({tagName: 'li', children: ['item1']}),
+            Element({tagName: 'li', children: ['zzy']}),
+        ]
+    })
+
+    let $root = document.querySelector('#root')
+    let $refresh = document.querySelector('#refresh')
+    updateElement($root, elem)
+    $refresh.addEventListener('click', () => {
+        updateElement($root, newElem, elem)
+    })
+
+</script>
+</html>
