@@ -8,20 +8,21 @@ function Element({tagName, props, children}) {
     this.children = children || []
 }
 
+// 页面渲染函数
 Element.prototype.render = function () {
     let el = document.createElement(this.tagName)
     for (let key in this.props) {
         el.setAttribute(key, this.props[key])
     }
     this.children.forEach(item => {
-        let childEl = null
+        let childEle
         if (item instanceof Element) {
-            childEl = item.render()
+            childEle = item.render()
         } else {
-            // 当Children数组子项不再是构造函数Element的实例的时候，只是个单纯的字符串，则创建文本节点
-            childEl = document.createTextNode(item)
+            // 当Children数组子项不再是构造函数Element的实例的时候，只是个单纯的字符串，已经遍历到最底层,则创建文本节点
+            childEle = document.createTextNode(item)
         }
-        el.appendChild(childEl)
+        el.appendChild(childEle)
     })
     return el
 }
@@ -41,6 +42,7 @@ function updateElement($root, newElem, oldElem, index = 0) {
             $root.replaceChild(newElem.render(), $root.childNodes[index])
         }
     } else if (newElem.tagName) {
+        // 如果父级节点没有变化的话，那么遍历children，执行更新
         for (let i = 0; i < newElem.children.length || i < oldElem.children.length; i++) {
             updateElement($root.childNodes[index], newElem.children[i], oldElem.children[i], i)
         }
