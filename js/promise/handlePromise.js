@@ -42,17 +42,43 @@ class Promise {
 
     // then方法，有两个参数onFulfilled,onRejected
     then(onFulfilled, onRejected) {
-        // 状态为fulfilled,执行onFulfilled,传入成功的值
-        if (this.state === 'fulfilled') {
-            onFulfilled(this.value)
-        }
-        // 状态为fulfilled,执行onFulfilled,传入成功的值
-        if (this.state === 'rejected') {
-            onRejected(this.reason)
-        }
+        // 声明返回的promise2
+        let promise2 = new Promise((reslove, reject) => {
+            // 状态为fulfilled,执行onFulfilled,传入成功的值
+            if (this.state === 'fulfilled') {
+                // 第一个then返回的值，可能是promise也可能是普通值,是普通值直接作为promise2成功的结果
+                // 如果还是promise则继续返回作为新的promise2的结果
+                let x = onFulfilled(this.value)
+                // 处理promise2和x的关系
+                resolvePromise(promise2, x, reslove, reject)
+            }
+            // 状态为fulfilled,执行onFulfilled,传入成功的值
+            if (this.state === 'rejected') {
+                let x = onRejected(this.reason)
+                resolvePromise(promise2, x, reslove, reject)
+            }
+            // 当state为pending时
+            if (this.state === 'pending') {
+                // onFulfilled传入成功数组
+                this.onRejectedCallbacks.push(() => {
+                    let x = onFulfilled(this.value)
+                    resolvePromise(promise2, x, reslove, reject)
+                })
+                // onRejected传入失败数组
+                this.onRejectedCallbacks.push(() => {
+                    let x = onRejected(this.reason)
+                    resolvePromise(promise2, x, reslove, reject)
+                })
+            }
+        })
+        // 返回promise，完成链式操作
+        return promise2
     }
 }
 
+function resolvePromise(promise2, x, resolve, reject) {
+
+}
 
 let p = new Promise()
 // p.then()
