@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // 创建 vDOM
+    let div = document.createElement('div')
+    let str = ''
+    for (let key in div) {
+        str += key + ' '
+    }
+    console.log(str);
+    // 浏览器创建DOM的代价是非常昂贵的
+    // 而虚拟dom是用原生的javascript对象去描述一个DOM节点
+</script>
+</html>
