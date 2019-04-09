@@ -1,4 +1,4 @@
-// 手写apply方法
+// 手写call方法
 
 Function.prototype._call = function () {
     // 获取传入的上下文
