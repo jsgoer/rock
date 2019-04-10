@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // ajax的get请求，参数在url后面
+    const xhr = getXHR()
+    let url = 'http://127.0.0.1:8080/xxx.do?username=testuser&userno=123'
+    xhr.open('GET', url, true)  // 开启异步
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            console.log(xhr.responseText)
+        }
+    }
+    xhr.send(null)
+
+    // 处理xhr兼容
+    function getXHR() {
+        let xhr
+        if (XMLHttpRequest) {
+            xhr = new XMLHttpRequest()
+        } else {
+            xhr = new ActiveXObject('Microsoft.XMLHTTP')
+        }
+        return xhr
+    }
+</script>
+</html>

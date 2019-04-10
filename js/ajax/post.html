@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // ajax的post请求，参数在send()中
+    const xhr = getXHR()
+    let url = 'http://127.0.0.1:8080/xxx.do'
+    xhr.open('POST', url, true)
+    xhr.setRequestHeader("Content-type", "application/www-form-urlencoded")
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            console.log(xhr.responseText)
+        }
+    }
+    xhr.send('username=testuser&userno=123')
+
+
+    // 处理xhr兼容
+    function getXHR() {
+        let xhr
+        if (XMLHttpRequest) {
+            xhr = new XMLHttpRequest()
+        } else {
+            xhr = new ActiveXObject('Microsoft.XMLHTTP')
+        }
+        return xhr
+    }
+</script>
+</html>
