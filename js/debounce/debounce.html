@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // 防抖
+    function debounce(fn, wait = 1000, immediate) {
+        let timer
+        return function () {
+            // 第三个参数控制是否进行防抖
+            if (immediate) {
+                fn.call(this, arguments)
+            }
+            if (timer) clearTimeout(timer)
+            timer = setTimeout(() => {
+                fn.call(this, arguments)
+            }, wait)
+        }
+    }
+
+    // realFunc
+    function realFunc() {
+        console.log('success')
+    }
+
+    // 监听浏览器窗口缩放(未防抖)
+    // window.addEventListener('resize', realFunc)
+
+    // 进行防抖
+    window.addEventListener('resize', debounce(realFunc, 500))
+</script>
+</html>
