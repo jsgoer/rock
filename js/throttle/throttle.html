@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // 截流
+    function throttle(fn, wait = 500) {
+        let prev = new Date().getTime()
+        return function () {
+            let now = new Date().getTime()
+            if (now - prev > wait) {
+                // fn.call(this, arguments)
+                fn(arguments)
+                prev = new Date().getTime()
+            }
+        }
+    }
+
+    // realFunc
+    function realFunc() {
+        console.log('success')
+    }
+
+    // 未截流
+    // window.addEventListener('resize', realFunc)
+
+    // 进行截流
+    window.addEventListener('resize', throttle(realFunc, 1000))
+</script>
+</html>

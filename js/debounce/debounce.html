@@ -8,17 +8,19 @@
 
 </body>
 <script>
-    // 防抖
+    // 防抖(动作停下来等待设定的时间才会触发函数,定时器是关键)
     function debounce(fn, wait = 1000, immediate) {
         let timer
         return function () {
             // 第三个参数控制是否进行防抖
             if (immediate) {
-                fn.call(this, arguments)
+                // fn.call(this, arguments)
+                fn(arguments)
             }
             if (timer) clearTimeout(timer)
             timer = setTimeout(() => {
-                fn.call(this, arguments)
+                // fn.call(this, arguments)
+                fn(arguments)
             }, wait)
         }
     }
