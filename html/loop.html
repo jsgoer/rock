@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/reset.css">
+</head>
+<body>
+<div id="wrapper">
+    <ul id="inner">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</div>
+<button onclick="move()">点击</button>
+</body>
+<style>
+    #wrapper {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        margin: 50px;
+        overflow: hidden;
+        border: 1px solid #ccc;
+    }
+
+    #inner {
+        width: 250px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    #inner li {
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+    }
+</style>
+<script>
+    let wrap = document.getElementById('wrapper')
+    let inn = document.getElementById('inner')
+    let a = 0
+
+    function move() {
+        a += 50
+        wrap.style.left += a + 'px'
+        console.log(a);
+    }
+</script>
+</html>
