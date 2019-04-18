@@ -12,43 +12,68 @@
         <li>2</li>
         <li>3</li>
         <li>4</li>
-        <li>5</li>
     </ul>
 </div>
-<button onclick="move()">点击</button>
+<button id="btn" onclick="move()">点击</button>
 </body>
 <style>
     #wrapper {
-        position: absolute;
-        width: 50px;
-        height: 50px;
+        position: relative;
+        width: 100px;
+        height: 100px;
         margin: 50px;
         overflow: hidden;
         border: 1px solid #ccc;
     }
 
     #inner {
-        width: 250px;
+        position: absolute;
+        width: 500px;
         display: flex;
         flex-direction: row;
     }
 
     #inner li {
-        width: 50px;
-        height: 50px;
+        width: 100px;
+        height: 100px;
         text-align: center;
-        line-height: 50px;
+        line-height: 100px;
+        color: #fff;
+    }
+
+    #inner li:nth-child(1) {
+        background: red;
+    }
+
+    #inner li:nth-child(2) {
+        background: green;
+    }
+
+    #inner li:nth-child(3) {
+        background: blue;
+    }
+
+    #inner li:nth-child(4) {
+        background: black;
     }
 </style>
 <script>
-    let wrap = document.getElementById('wrapper')
     let inn = document.getElementById('inner')
-    let a = 0
+    let x = 0
+
+    let timer = setInterval(() => {
+        x -= 100
+        inn.style.left = x + 'px'
+        if (inn.offsetLeft <= -300) {
+            x = 100
+        }
+        console.log(inn.offsetLeft);
+    }, 1000)
 
     function move() {
-        a += 50
-        wrap.style.left += a + 'px'
-        console.log(a);
+        // x -= 50
+        // inn.style.left = x + 'px'
     }
+
 </script>
 </html>
