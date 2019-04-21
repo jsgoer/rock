@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+
+
+    // 利用max-age设置过期时间
+    document.cookie = 'name=nba;max-age=10'
+
+    //利用expires
+    let curDate = new Date()
+    curDate.setTime(curDate.getTime() + 10 * 1000)
+    document.cookie = 'name=hangzhou;expires=' + curDate.toUTCString()
+</script>
+</html>
