@@ -1,4 +1,11 @@
-// os
-const os = require('os')
-console.log(os.cpus());
-console.log(os.totalmem());
+/**
+ *  require方法的两个作用
+ *  1.加载文件模块并执行里面的代码（但此时任然拿不到被加载模块内部的属性和方法，因为是模块作用域）
+ *  2.拿到被加载模块导出的接口对象
+ */
+
+/**
+ * exports：每个文件模块中都提供了一个对象，默认是空对象
+ * 把所有需要被外部访问的成员挂载到这个对象上
+ */
+console.log(exports)
