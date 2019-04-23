@@ -44,4 +44,24 @@
     console.log(res(arr));
 }
 
+{
+    // 对象属性求和
+    let result = [
+        {
+            name: 'a',
+            num: 1
+        },
+        {
+            name: 'b',
+            num: 2
+        }, {
+            name: 'c',
+            num: 3
+        }
+    ]
+    let res = result.reduce((prev, cur) => {
+        return prev + cur.num
+    }, 0)
+    console.log(res);
+}
 
