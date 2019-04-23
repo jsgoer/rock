@@ -1,4 +1,4 @@
-// 手写reduce
+// 手写reduce  ????过段时间再看
 
 Array.prototype._reduce = function (fn, initVal) {
     let initArr = this
