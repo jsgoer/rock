@@ -14,15 +14,6 @@
 }
 
 {
-    // 判断元素是个在某个对象中
-    let obj = {
-        a: 1
-    }
-    let b = 'a'
-    console.log(b in obj);
-}
-
-{
     // 数组去重
     let arr = [1, 2, 2, 3, 4, 4, 4]
     let res = arr.reduce((prev, cur) => {
@@ -33,6 +24,24 @@
         }
     }, [])
     console.log(res);
+}
+
+{
+    // 将二维数组转化为一维，设置初始值[]
+    let arr = [[0, 1], [2, 3], [4, 5]]
+    let res = arr.reduce((prev, cur) => {
+        return prev.concat(cur)
+    }, [])
+    console.log(res);
+}
+
+{
+    // 将多维数组转为一维，初始值[]
+    let arr = [[1, 2], 3, [[[4], 5]]]
+    let res = function (arr) {
+        return arr.reduce((prev, cur) => prev.concat(Array.isArray(cur) ? res(cur) : cur), [])
+    }
+    console.log(res(arr));
 }
 
 
