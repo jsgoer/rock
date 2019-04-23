@@ -21,3 +21,18 @@
     let b = 'a'
     console.log(b in obj);
 }
+
+{
+    // 数组去重
+    let arr = [1, 2, 2, 3, 4, 4, 4]
+    let res = arr.reduce((prev, cur) => {
+        if (!prev.includes(cur)) {
+            return prev.concat(cur)
+        } else {
+            return prev
+        }
+    }, [])
+    console.log(res);
+}
+
+
