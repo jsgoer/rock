@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <title>Pull up loading</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <style>
+        .container {
+            position: relative;
+            height: 287px;
+            overflow: scroll;
+        }
+
+        .wrapper {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .wrapper li {
+            text-align: center;
+            line-height: 40px;
+            border-bottom: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <ul class="wrapper">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+    </ul>
+</div>
+</body>
+<script>
+    let container = document.querySelector('.container')
+    let wrapper = document.querySelector('.wrapper')
+    let num = 11
+    let isLoad = false
+
+    // 动态添加li
+    function addLi() {
+        // 创建文档片段，将元素添加到文档片段，然后将文档片段添加到DOM树（是DOM节点，但不是主DOM树的一部分），可以提升性能
+        let fragment = document.createDocumentFragment()
+        for (let i = 0; i < 10; i++) {
+            let li = document.createElement("li")
+            // li.className = 'li'
+            li.innerHTML = num++
+            fragment.appendChild(li)
+        }
+        wrapper.appendChild(fragment)
+    }
+
+    // 监听scroll
+    container.addEventListener('scroll', function () {
+        if (container.scrollHeight - container.scrollTop < 300 && isLoad == false) {
+            isLoad = true
+            addLi()
+            setTimeout(() => {
+                isLoad = false
+            }, 10)
+        }
+    }, false)
+
+</script>
+</html>
