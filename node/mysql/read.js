@@ -1,5 +1,5 @@
-const query = require('mysql')
-const connection = query.createConnection({
+const read = require('mysql')
+const connection = read.createConnection({
     host: 'localhost',
     user: 'root',
     password: '1017',
