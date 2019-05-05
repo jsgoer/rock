@@ -3,8 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .container {
+            text-align: center;
+            margin: 50px;
+            width: 200px;
+        }
+
+        .header {
+            display: flex;
+            height: 40px;
+        }
+
+        .header > div {
+            flex: 1;
+            width: calc(100% - 4px);
+            line-height: 40px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        .header > div.active {
+            color: #fff;
+            background: #000;
+        }
+
+        .main {
+            height: 100px;
+            line-height: 100px;
+            border: 1px solid #ccc;
+        }
+    </style>
 </head>
 <body>
-
+<div class="container">
+    <div class="header">
+        <div class="tab">one</div>
+        <div class="tab">two</div>
+    </div>
+    <div class="main"></div>
+</div>
 </body>
+<script>
+    let tab = document.querySelectorAll('.tab')
+    let main = document.getElementsByClassName('main')[0]
+    let content = ['one content', 'two content']
+
+    // 默认样式
+    tab[0].className = 'active'
+    main.innerHTML = content[0]
+
+    tab.forEach((item, index) => {
+        item.onclick = function () {
+            // 遍历清楚每个tab的激活样式
+            tab.forEach(v => {
+                v.className = ''         // v.classList.remove('active') 也行
+            })
+            tab[index].className = 'active'  // tab[index].classList.add('active')
+            main.innerHTML = content[index]
+        }
+    })
+</script>
 </html>
