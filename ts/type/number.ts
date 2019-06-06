@@ -1,8 +1,8 @@
 var num: number = 10
 
-function tell() {
+function add() {
     num++
     console.log(num);
 }
 
-tell()
+add()

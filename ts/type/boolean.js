@@ -1,5 +1,5 @@
 var isBool = false;
-function tell() {
+function verify() {
     console.log(isBool);
 }
-tell();
+verify();

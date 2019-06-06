@@ -1,5 +1,5 @@
 var str = 'zzy';
-function tell() {
+function say() {
     console.log('my name is ' + str);
 }
-tell();
+say();

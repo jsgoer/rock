@@ -1,7 +1,7 @@
 var isBool: boolean = false
 
-function tell() {
+function verify() {
     console.log(isBool);
 }
 
-tell()
+verify()
