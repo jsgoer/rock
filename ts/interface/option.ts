@@ -1,11 +1,11 @@
 // 可选接口(不必完全匹配接口的形状)
 interface Person1 {
-    job: string
-    address?: string
+    name: string
+    age?: number
 }
 
 let p1: Person1 = {
-    job: 'web'
+    name: 'zzy'
 }
 
 console.log(p1);

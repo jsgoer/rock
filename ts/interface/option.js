@@ -1,4 +1,4 @@
 var p1 = {
-    job: 'web'
+    name: 'zzy'
 };
 console.log(p1);
