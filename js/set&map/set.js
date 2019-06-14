@@ -30,7 +30,7 @@ s2.forEach((item, index, input) => {
     // item,index都是当前项
     // input 则是当前实例
     console.log('item ' + item);
-    console.log('index ' + index);
+    console.log('write.js ' + index);
     console.log('input ' + input);
 })
 
