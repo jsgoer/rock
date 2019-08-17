@@ -1,7 +1,7 @@
 /**
- * @param obj
  * @desc 判断对象是否是普通对象(from redux)
- * @return boolean
+ * @param obj
+ * @return {boolean}
  */
 function isPlainObject(obj) {
     if (typeof obj !== 'object' || obj === null) return false
@@ -12,7 +12,7 @@ function isPlainObject(obj) {
     return Object.getPrototypeOf(obj) === proto
 }
 
-let obj = {}     // true
+let obj = {}                           // true
 // let obj = Object.create(null)       // false
 console.log(isPlainObject(obj));
 
