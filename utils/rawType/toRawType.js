@@ -4,7 +4,7 @@
  * @return {string}
  */
 function toRawType(val) {
-    const _toString = Object.prototype.toString
+    const _toString = Object.prototype.toString;
     return _toString.call(val).slice(8, -1)
 
 }
