@@ -6,3 +6,6 @@
 function isObject(obj) {
     return obj !== null && typeof obj === 'object'
 }
+
+let obj = '';
+console.log(isObject(obj));
