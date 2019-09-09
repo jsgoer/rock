@@ -7,3 +7,14 @@ server.listen(3000, () => {
     process.title = '程序员指北'
     console.log('进程id', process.pid)
 })
+
+
+const longComputation = () => {
+    let sum = 0;
+    for (let i = 0; i < 10; i++) {
+        sum += i;
+    }
+    return sum;
+};
+
+console.log(longComputation());
