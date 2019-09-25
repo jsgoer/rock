@@ -24,6 +24,20 @@ console.log(tomcat);
 let tom = buildName('Tom')
 console.log(tom);
 
+// 正常情况下，可选参数只能位于最后，但是当ts会将默认参数看做可选参数，不受位置限制
+function defaultName(firstName: string = 'igsnow', lastName: string) {
+    return firstName + ' ' + lastName
+}
+
+console.log(defaultName(undefined, 'zzy'));
+
+// 函数的剩余参数
+function push(array: any[], ...items: any []) {
+    items.forEach(item => {
+        array.push(item)
+    })
+}
+
 // 重载
 function reverse(x: number | string): number | string {
     if (typeof x == 'number') {
