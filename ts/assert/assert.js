@@ -11,3 +11,13 @@ function getLength(something) {
         return something.toString().length;
     }
 }
+// 第二种方法 ，在react中必须使用此方法
+function toBool(something) {
+    if (something) {
+        return false;
+    }
+    else {
+        return true;
+    }
+}
+console.log(toBool('a'));
