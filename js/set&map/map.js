@@ -2,6 +2,7 @@
  * 1.和Object对比，对象终将key值转化为字符串，但Map的key可以是任意值
  * 2.set、get、has、delete、clear  (set方法设置值包含修改Map的值，这点和Set的add方法不同)
  * 3.forEach
+ * 4.size  Map实例的大小
  */
 let o = new Object({false: undefined, [[1, 2, 3]]: [1, 2], [{'age': 1}]: {'age': 1}, 18: 'zzy'})
 console.log('Obj: ', o);
