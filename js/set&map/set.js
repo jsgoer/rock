@@ -70,3 +70,18 @@ console.log('---------------------')
     console.log(s.has({t: 1}));  // false
 }
 
+{
+    let obj = {
+        name: 'zzy',
+        age: 10,
+        job: 'it'
+    }
+    let tar = Object.keys(obj)
+
+    // 注: Object.keys()的值不可迭代
+    // for (let i of tar) {
+    //     console.log(i);
+    // }
+
+}
+
