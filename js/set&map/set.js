@@ -71,17 +71,18 @@ console.log('---------------------')
 }
 
 {
-    let obj = {
-        name: 'zzy',
-        age: 10,
-        job: 'it'
-    }
-    let tar = Object.keys(obj)
+    let obj = new Object()
+    let set = new Set([1, 2, 3])
+    let map = new Map([['a', 1], ['b', 2], ['c', 3]])
+    console.log('Object: ', obj[Symbol.iterator]);
+    console.log('Set: ', set[Symbol.iterator]);
+    console.log('Map: ', map[Symbol.iterator]);
 
-    // 注: Object.keys()的值不可迭代
-    // for (let i of tar) {
-    //     console.log(i);
-    // }
+
+    // 注: Object不可迭代，但Set、Map可以迭代
+    for (let i of obj) {
+        console.log(i);
+    }
 
 }
 
