@@ -12,6 +12,7 @@
     }
     let arr = [1, 2, 3, [4, 5]]
     let newArr = shallowCopy(arr)
+    console.log('-------------浅拷贝--------------')
     console.log('arr => ', arr, 'newArr => ', newArr)
     newArr[3][0] = 40
     console.log('arr => ', arr, 'newArr => ', newArr)
@@ -31,6 +32,7 @@
     }
     let arr = [1, 2, 3, [4, 5]]
     let newArr = deepCopy(arr)
+    console.log('-------------深拷贝--------------')
     console.log('arr => ', arr, 'newArr => ', newArr)
     newArr[3][0] = 40
     console.log('arr => ', arr, 'newArr => ', newArr)
@@ -47,13 +49,14 @@
         }
     }
 
-    Foo.prototype.sayGoodBye = function () {
-        console.log('say goodbye')
+    Foo.prototype.sayHello = function () {
+        console.log('say hello')
     }
     let foo = new Foo()
+    console.log('-----------检测原型属性-----------')
     for (let key in foo) {
-        console.log(key);
+        console.log('Object key: ', key);
     }
-    console.log(foo.hasOwnProperty('sayHi'));
-    console.log(foo.hasOwnProperty('sayGoodBye'));   // false 就是从原型继承的属性，不应该被拷贝
+    console.log('Object has sayHi: ', foo.hasOwnProperty('sayHi'));
+    console.log('Object has sayHello: ', foo.hasOwnProperty('hello'));   // false 就是从原型继承的属性，不应该被拷贝
 }
