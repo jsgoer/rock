@@ -1,8 +1,20 @@
-// 字符串换行
-let str = `lebron
+// es5的字符串换行，通过拼接的方式
+{
+    let str = 'lebron \n' +
+        '\n' +
+        'james'
+    console.log('es5字符串换行: ', str);
+}
+
+console.log('-----------------')
+
+// 字符串换行，空行也直接显示
+{
+    let str = `lebron
 
 james`
-console.log(str);
+    console.log('es6字符串换行: ', str);
+}
 
 // 带标签的模板字符串
 let person = 'zzy',
