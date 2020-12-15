@@ -7,6 +7,7 @@
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "etl-collections": "0.0.3",
+    "md5": "^2.3.0",
     "mysql": "^2.16.0",
     "pinyin": "^2.9.1",
     "vue-template-compiler": "^2.6.10"
