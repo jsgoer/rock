@@ -1,7 +1,17 @@
 const puppeteer = require('puppeteer')
+const browserFetcher = puppeteer.createBrowserFetcher();
 
+browserFetcher.download("809590").then((res) => {
+    console.log(res);
+})
+
+
+
+
+return false
 try {
     (async () => {
+
         const browser = await puppeteer.launch({
             headless: false,                     // 是否显示浏览器
             args: ['--start-maximized', '--no-sandbox', '--disable-setuid-sandbox']          // 是否全屏显示
