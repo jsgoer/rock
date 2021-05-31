@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="tempHtml">
+        <div class="label-content" id="aaa" style="height:150mm;width:100mm">
+            <div class="view-mask"></div>
+            <div class="custom-area ui-droppable"></div>
+            <div class="custom-drop ui-droppable">
+                <div class="dropitem barcode" data-type="barcode" data-title="单号条形码" data-minwidth="142"
+                    style="position: absolute; top: 9px; left: 144px; width: 222px;">
+                    <deer id="SHIP_BILL_NO_BAR_CODE">
+                        < img src="/printTemp/img/barcode.jpg">
+                    </deer> <span class="codemunber">
+                        <deer id="SHIP_BILL_NO_PREFIX"><span class="prefix dis-none"></span></deer>
+                        <deer id="SHIP_BILL_NO">1111111111111</deer>
+                    </span>
+                </div>
+                <div class="dropitem imageitem" data-type="image" data-title="图片"
+                    style="width:150px;height:50px;left:-3px;top:1px">
+                    < img src="/printTemp/img/australia-post.jpg">
+                </div>
+                <div class="dropitem character" data-type="character" data-title="内部单号"
+                    style="height: 30px; position: absolute; top: 80px; left: 58px; width: 236px; text-align: center;">
+                    <strong class="title" style="display: none;">内部单号</strong><span class="detail"
+                        style="font-size: 30px; line-height: 30px; font-weight: 700;">
+                        <deer id="SO_BILL_NO">12345668</deer>
+                    </span>
+                </div>
+                <div class="dropitem character address" data-type="address" data-title="发件人地址"
+                    style="position: absolute; top: 120.667px; left: 2.66667px; height: 82px; width: 363px;"><span
+                        class="detail block"><span class="name">
+                            <deer id="SENDER_NAME">MrLiu</deer>
+                        </span> <span class="street">
+                            <deer id="SENDER_ADDRESS">Qibao town Ming road no. 555 on the 8th floor 2 floor</deer>
+                        </span> <span class="area">
+                            <deer id="SENDER_AREA">Minhang district</deer>
+                            <deer id="SENDER_CITY">Shanghai</deer>
+                            <deer id="SENDER_PROVINCE">Shanghai</deer>
+                        </span> <span class="country">
+                            <deer id="SENDER_COUNTRY">China</deer>
+                        </span> <span class="tel2">
+                            <deer id="SENDER_MOBILE">13888888888</deer>
+                        </span></span></div>
+                <div class="dropitem character address" data-type="address" data-title="收件人地址"
+                    style="position: absolute; top: 227.667px; left: 0.666667px; height: 68px; width: 363px;"><span
+                        class="detail block"><span class="name">
+                            <deer id="RECEIVER_NAME">Andrew Peac
+</body>
+
+</html>
